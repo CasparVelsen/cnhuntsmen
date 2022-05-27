@@ -16,6 +16,7 @@ export default createGlobalStyle`
     font-size: 1em;
   }
   header {
+      padding: 0 20px;
       height: 48px;
       display: flex;
       align-items: center;
