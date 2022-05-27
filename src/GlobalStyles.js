@@ -15,4 +15,11 @@ export default createGlobalStyle`
   input, label, button, textarea {
     font-size: 1em;
   }
+  header {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 300px;
+      background-color: rgb(90, 125, 90);
+  }
 `;
