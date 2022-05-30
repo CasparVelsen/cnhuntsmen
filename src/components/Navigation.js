@@ -13,9 +13,8 @@ export default function Navigation() {
 }
 
 const Nav = styled.nav`
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
 `;
 
 const LinkStyled = styled(NavLink)`
@@ -24,9 +23,9 @@ const LinkStyled = styled(NavLink)`
   justify-content: center;
   text-decoration: none;
   color: white;
-  padding: 5px;
+  padding: 10px;
 
   &.active {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
   }
 `;
