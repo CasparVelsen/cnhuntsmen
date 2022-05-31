@@ -62,6 +62,10 @@ const MainDarken = styled.div`
       opacity: 0.75;
       z-index: 9998;
     `};
+
+  @media (min-width: 700px) {
+    display: none;
+  }
 `;
 
 export default App;
