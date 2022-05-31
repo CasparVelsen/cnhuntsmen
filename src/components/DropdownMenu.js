@@ -27,10 +27,7 @@ const Nav = styled.nav`
   flex-direction: column;
   align-items: center;
   background-color: #aaa;
-  width: 50%;
-  height: calc(100vh - 80px);
-  margin-left: 50%;
-  position: absolute;
+  width: 100%;
   padding: 10px;
   z-index: 9999;
 
@@ -40,13 +37,13 @@ const Nav = styled.nav`
       display: none;
     `};
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     display: none;
   }
 `;
 
 const LinkStyled = styled(NavLink)`
-  width: 60%;
+  width: 30%;
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -54,6 +51,6 @@ const LinkStyled = styled(NavLink)`
   padding: 10px;
 
   &.active {
-    border-right: 2px solid white;
+    border-bottom: 2px solid white;
   }
 `;

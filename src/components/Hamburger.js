@@ -13,7 +13,7 @@ export default function Hamburger({ toggleMenu, active }) {
 const Icon = styled.div`
   cursor: pointer;
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     display: none;
   }
 `;
