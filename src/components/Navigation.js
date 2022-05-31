@@ -15,6 +15,10 @@ export default function Navigation() {
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const LinkStyled = styled(NavLink)`
