@@ -6,11 +6,13 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useState } from 'react';
 
 function App() {
   const [active, setActive] = useState(false);
+
+  console.log(active);
 
   function toggleMenu() {
     setActive(!active);
@@ -24,7 +26,7 @@ function App() {
         <Hamburger toggleMenu={toggleMenu} active={active} />
       </header>
       <main>
-        <DropdownMenu active={active} />
+        <DropdownMenu toggleMenu={toggleMenu} active={active} />
         <Content>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -33,6 +35,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </Content>
+        <MainDarken active={active}>something</MainDarken>
         <footer>Footer</footer>
       </main>
     </>
@@ -42,6 +45,23 @@ function App() {
 const Content = styled.div`
   height: 100vh;
   padding: 0 20px;
+`;
+
+const MainDarken = styled.div`
+  position: absolute;
+  border: 1px solid black;
+  height: 100%;
+  width: 100vw;
+  display: none;
+
+  ${({ active }) =>
+    active &&
+    css`
+      display: block;
+      background-color: black;
+      opacity: 0.75;
+      z-index: 9998;
+    `};
 `;
 
 export default App;

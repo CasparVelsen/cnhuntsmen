@@ -1,15 +1,22 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export default function DropdownMenu({ active }) {
-  console.log(active);
+export default function DropdownMenu({ toggleMenu, active }) {
   return (
     <>
       <Nav active={active}>
-        <LinkStyled to="/">Homepage</LinkStyled>
-        <LinkStyled to="/about">About</LinkStyled>
-        <LinkStyled to="/portfolio">Portfolio</LinkStyled>
-        <LinkStyled to="/contact">Contact</LinkStyled>
+        <LinkStyled to="/" onClick={toggleMenu}>
+          Homepage
+        </LinkStyled>
+        <LinkStyled to="/about" onClick={toggleMenu}>
+          About
+        </LinkStyled>
+        <LinkStyled to="/portfolio" onClick={toggleMenu}>
+          Portfolio
+        </LinkStyled>
+        <LinkStyled to="/contact" onClick={toggleMenu}>
+          Contact
+        </LinkStyled>
       </Nav>
     </>
   );
@@ -19,7 +26,13 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: grey;
+  background-color: #aaa;
+  width: 50%;
+  height: calc(100vh - 80px);
+  margin-left: 50%;
+  position: absolute;
+  padding: 10px;
+  z-index: 9999;
 
   ${({ active = false }) =>
     !active &&
@@ -33,7 +46,7 @@ const Nav = styled.nav`
 `;
 
 const LinkStyled = styled(NavLink)`
-  width: fit-content;
+  width: 60%;
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -41,6 +54,6 @@ const LinkStyled = styled(NavLink)`
   padding: 10px;
 
   &.active {
-    border-bottom: 2px solid white;
+    border-right: 2px solid white;
   }
 `;
